@@ -147,6 +147,17 @@ export default function InstSelection() {
           type="radio"
           checked={institution == locations.location6.name}
           name="inst"
+          value={locations.location6.name}
+        />
+        <label htmlFor={locations.location6.name}>
+          {locations.location6.name}
+        </label>
+
+        <input
+          id={locations.location7.name}
+          type="radio"
+          checked={institution == locations.location7.name}
+          name="inst"
           value={locations.location7.name}
         />
         <label htmlFor={locations.location7.name}>
@@ -165,7 +176,7 @@ export default function InstSelection() {
         </label>
 
         <input
-          id={locations.location1.name}
+          id={locations.location9.name}
           type="radio"
           checked={institution == locations.location9.name}
           name="inst"
@@ -217,17 +228,6 @@ export default function InstSelection() {
         />
         <label htmlFor={locations.location13.name}>
           {locations.location13.name}
-        </label>
-
-        <input
-          id={locations.location14.name}
-          type="radio"
-          checked={institution == locations.location14.name}
-          name="inst"
-          value={locations.location14.name}
-        />
-        <label htmlFor={locations.location14.name}>
-          {locations.location14.name}
         </label>
 
         <input
