@@ -9,13 +9,14 @@ const Navbar = ({ user, setUser }) => {
   return (
     <div className="container">
       <div className="title">
-        <Link to="/">My Cool App</Link>
+        <Link to="/home">My Cool App</Link>
       </div>
       <nav>
         {user !== null && (
           <div>
             <span>{user.email}</span>
             <button onClick={handleClick}>Log out</button>
+            <Link to="userprofile">user profile</Link>
           </div>
         )}
         {user === null && (

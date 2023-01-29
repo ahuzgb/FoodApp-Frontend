@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Home = ({ user }) => {
   const [donations, setDonations] = useState([]);
@@ -26,7 +27,7 @@ const Home = ({ user }) => {
   console.log("HERE", donations);
 
   return (
-    <div className="donations">
+    /*     <div className="donations">
       {donations.length ? (
         donations.map((donation) => (
           <div key={donation._id}>
@@ -42,8 +43,15 @@ const Home = ({ user }) => {
           </div>
         ))
       ) : (
-        <h1 style={{ color: "red" }}>No posts found</h1>
+        <h1 style={{ color: "red" }}>No donations found</h1>
       )}
+    </div> */
+    <div>
+      <div>
+        <p>Some text about donations and stuff</p>
+      </div>
+
+      <Link to="/donation-form">donation-form</Link>
     </div>
   );
 };

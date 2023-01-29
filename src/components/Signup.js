@@ -15,7 +15,7 @@ const Signup = ({ setUser }) => {
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch("http://localhost:8080/user/signup", {
+    const response = await fetch("http://localhost:8080/users/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, surname, city, email, password }),
