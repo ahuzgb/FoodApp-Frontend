@@ -9,7 +9,9 @@ const Navbar = ({ user, setUser }) => {
   return (
     <div className="container">
       <div className="title">
-        <Link to="/home">My Cool App</Link>
+        <Link to="/home" className="home">
+          Home
+        </Link>
       </div>
       <nav>
         {user !== null && (
@@ -20,9 +22,13 @@ const Navbar = ({ user, setUser }) => {
           </div>
         )}
         {user === null && (
-          <div>
-            <Link to="login">Login</Link>
-            <Link to="signup">Signup</Link>
+          <div className="butons">
+            <Link to="login" className="login">
+              Login
+            </Link>
+            <Link to="signup" className="signup">
+              Signup
+            </Link>
           </div>
         )}
       </nav>

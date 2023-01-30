@@ -1,3 +1,65 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #b6bfac9c;
+}
 
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
 
+nav {
+  display: flex;
+}
 
+nav div {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-right: 20px;
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+}
+
+nav button {
+  background-color: #f3f3f3;
+  border: 1px solid black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+nav button:hover {
+  background-color: black;
+  color: white;
+}
+
+.home {
+  background-color: #5cb85c;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+}
+
+nav a.signup,
+nav a.login {
+  background-color: #5cb85c;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+nav a.signup:hover,
+nav a.login:hover {
+  background-color: #449d44;
+}
