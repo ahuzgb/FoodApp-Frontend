@@ -18,7 +18,7 @@ const Signup = ({ setUser }) => {
     const response = await fetch("http://localhost:8080/users/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, surname, city, email, password }),
+      body: JSON.stringify({ first_name: name, last_name: surname, city, email, password }),
     });
 
     const data = await response.json();

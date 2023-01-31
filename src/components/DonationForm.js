@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import moment, { months } from "moment";
 
 const DonationForm = () => {
   const [articleName, setArticleName] = useState("");
@@ -8,6 +9,8 @@ const DonationForm = () => {
   const [category, setCategory] = useState("");
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [currentTime, setCurrentTime] = useState(moment());
+  const [isGood, setIsGood] = useState(false);
 
   const categories = [
     "Bread",
@@ -20,11 +23,24 @@ const DonationForm = () => {
     "Chocolate",
   ];
 
+  const checkExpiration = (currentDate, articleDate) => {
+    return currentDate.diff(articleDate, "days");
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     setIsLoading(true);
     setError(null);
+    console.log(category);
+    if (
+      category === "Bread" &&
+      checkExpiration(currentTime, expirationDate) > 10
+    ) {
+      return console.log("This shit is moldy AF"); // switch for all categories
+    }
+
+    console.log(checkExpiration(currentTime, expirationDate));
 
     const response = await fetch("http://localhost:8080/donations", {
       method: "POST",
@@ -48,6 +64,7 @@ const DonationForm = () => {
     if (response.ok) {
       setIsLoading(false);
       alert("Donation successfully added");
+      setIsGood(true);
       resetForm();
     }
   };
@@ -60,53 +77,60 @@ const DonationForm = () => {
   };
 
   return (
-    <form className="donation-form" onSubmit={handleSubmit}>
-      <h3>Donation Form</h3>
-      <label>Article name: </label>
-      <input
-        type="text"
-        onChange={(e) => setArticleName(e.target.value)}
-        value={articleName}
-      />
+    <>
+      <form className="donation-form" onSubmit={handleSubmit}>
+        <h3>Donation Form</h3>
+        <label>Article name: </label>
+        <input
+          type="text"
+          onChange={(e) => setArticleName(e.target.value)}
+          value={articleName}
+        />
 
-      <label>Expiration date: </label>
-      <input
-        type="text"
-        onChange={(e) => setExpirationDate(e.target.value)}
-        value={expirationDate}
-      />
+        <label>Expiration date: </label>
+        <input
+          type="date"
+          onChange={(e) => setExpirationDate(e.target.value)}
+          value={expirationDate}
+        />
 
-      <label>Weight: </label>
-      <input
-        type="number"
-        onChange={(e) => setWeight(e.target.value)}
-        value={weight}
-      />
+        <label>Weight: </label>
+        <input
+          type="number"
+          onChange={(e) => setWeight(e.target.value)}
+          value={weight}
+        />
 
-      <label>Quantity: </label>
-      <input
-        type="number"
-        onChange={(e) => setQuantity(e.target.value)}
-        value={quantity}
-      />
+        <label>Quantity: </label>
+        <input
+          type="number"
+          onChange={(e) => setQuantity(e.target.value)}
+          value={quantity}
+        />
 
-      <label>Category: </label>
-      {categories.map((cat) => (
-        <div key={cat}>
-          <input
-            type="radio"
-            name="category"
-            id={cat}
-            value={cat}
-            checked={category === cat}
-            onChange={(e) => setCategory(e.target.value)}
-          />
-          <label htmlFor={cat}>{cat}</label>
-        </div>
-      ))}
-      <button>Submit</button>
-      {error && <div className="error">{error}</div>}
-    </form>
+        <label>Category: </label>
+        {categories.map((cat) => (
+          <div key={cat}>
+            <input
+              type="radio"
+              name="category"
+              id={cat}
+              value={cat}
+              checked={category === cat}
+              onChange={(e) => setCategory(e.target.value)}
+            />
+            <label htmlFor={cat}>{cat}</label>
+          </div>
+        ))}
+        <button>Submit</button>
+        {error && <div className="error">{error}</div>}
+        {isGood && (
+          <div>
+            <p>All possible locations</p>
+          </div>
+        )}
+      </form>
+    </>
   );
 };
 

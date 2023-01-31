@@ -1,65 +1,95 @@
+/*  
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
-  padding: 20px;
-  background-color: #b6bfac9c;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .title {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-nav {
+  font-size: 22px;
   display: flex;
-}
-
-nav div {
-  display: flex;
-  align-items: center;
-}
-
-nav a {
-  margin-right: 20px;
-  font-size: 16px;
-  text-decoration: none;
-  color: black;
-}
-
-nav button {
-  background-color: #f3f3f3;
-  border: 1px solid black;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-nav button:hover {
-  background-color: black;
-  color: white;
 }
 
 .home {
-  background-color: #5cb85c;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.butons {
+  display: flex;
+  font-size: 22px;
+}
+
+.butons a {
+  margin-right: 10px;
+  color: #fff;
   text-decoration: none;
 }
 
-nav a.signup,
-nav a.login {
-  background-color: #5cb85c;
-  color: white;
-  padding: 10px 20px;
+.butons button {
+  background-color: #fff;
+  color: #333;
+  border: none;
   border-radius: 5px;
-  text-align: center;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+ */
+
+/* .container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
 }
 
-nav a.signup:hover,
-nav a.login:hover {
-  background-color: #449d44;
+.title {
+  font-size: 22px;
+  display: flex;
 }
+
+.home {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.butons {
+  display: flex;
+  font-size: 22px;
+}
+
+.butons a {
+  margin-right: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.butons button {
+  background-color: #fff;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+main {
+  padding-top: 50px;
+}
+ */
