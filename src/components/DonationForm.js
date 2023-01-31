@@ -17,7 +17,7 @@ const DonationForm = () => {
     "Milk(haltbare)",
     "Coffee",
     "Pasta",
-    "Soup",
+    "Cup Noodles/Cup Soup",
     "Rice",
     "Canned goods",
     "Chocolate",
@@ -37,9 +37,50 @@ const DonationForm = () => {
       category === "Bread" &&
       checkExpiration(currentTime, expirationDate) > 10
     ) {
-      return console.log("This shit is moldy AF"); // switch for all categories
+      return alert("according to our parametes, food can not be donated");
     }
-
+    if (
+      category === "Milk(haltbare)" &&
+      checkExpiration(currentTime, expirationDate) > 90
+    ) {
+      return alert("according to our parametes, food can not be donated");
+    }
+    if (
+      category === "Coffee" &&
+      checkExpiration(currentTime, expirationDate) > 365
+    ) {
+      return alert("according to our parametes, food can not be donated");
+    }
+    if (
+      category === "Pasta" &&
+      checkExpiration(currentTime, expirationDate) > 365
+    ) {
+      return alert("according to our parametes, food can not be donated");
+    }
+    if (
+      category === "Cup noodles/Cup Soup" &&
+      checkExpiration(currentTime, expirationDate) > 365
+    ) {
+      return alert("according to our parametes, food can not be donated");
+    }
+    if (
+      category === "Rice" &&
+      checkExpiration(currentTime, expirationDate) > 365
+    ) {
+      return alert("according to our parametes, food can not be donated");
+    }
+    if (
+      category === "Canned goods" &&
+      checkExpiration(currentTime, expirationDate) > 720
+    ) {
+      return alert("according to our parametes, food can not be donated");
+    }
+    if (
+      category === "Chocolate" &&
+      checkExpiration(currentTime, expirationDate) > 365
+    ) {
+      return alert("according to our parametes, food can not be donated");
+    }
     console.log(checkExpiration(currentTime, expirationDate));
 
     const response = await fetch("http://localhost:8080/donations", {
