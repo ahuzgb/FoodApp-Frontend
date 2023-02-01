@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import moment, { months } from "moment";
+import InstSelection from "./InstSelection";
 
-const DonationForm = () => {
+const DonationForm = ({ user, token }) => {
   const [articleName, setArticleName] = useState("");
   const [expirationDate, setExpirationDate] = useState("");
   const [weight, setWeight] = useState(0);
@@ -11,6 +12,8 @@ const DonationForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [currentTime, setCurrentTime] = useState(moment());
   const [isGood, setIsGood] = useState(false);
+  const [signal, setSignal] = useState(false);
+  const [institution, setInstitution] = useState("");
 
   const categories = [
     "Bread",
@@ -27,12 +30,7 @@ const DonationForm = () => {
     return currentDate.diff(articleDate, "days");
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    setIsLoading(true);
-    setError(null);
-    console.log(category);
+  const checkEverything = () => {
     if (
       category === "Bread" &&
       checkExpiration(currentTime, expirationDate) > 10
@@ -81,7 +79,14 @@ const DonationForm = () => {
     ) {
       return alert("according to our parametes, food can not be donated");
     }
-    console.log(checkExpiration(currentTime, expirationDate));
+    setIsGood(true);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setIsLoading(true);
+    setError(null);
 
     const response = await fetch("http://localhost:8080/donations", {
       method: "POST",
@@ -92,6 +97,8 @@ const DonationForm = () => {
         weight,
         quantity,
         category,
+        institution,
+        user: user._id,
       }),
     });
 
@@ -105,7 +112,6 @@ const DonationForm = () => {
     if (response.ok) {
       setIsLoading(false);
       alert("Donation successfully added");
-      setIsGood(true);
       resetForm();
     }
   };
@@ -123,6 +129,7 @@ const DonationForm = () => {
         <h3>Donation Form</h3>
         <label>Article name: </label>
         <input
+          required
           type="text"
           onChange={(e) => setArticleName(e.target.value)}
           value={articleName}
@@ -130,6 +137,7 @@ const DonationForm = () => {
 
         <label>Expiration date: </label>
         <input
+          required
           type="date"
           onChange={(e) => setExpirationDate(e.target.value)}
           value={expirationDate}
@@ -137,6 +145,7 @@ const DonationForm = () => {
 
         <label>Weight: </label>
         <input
+          required
           type="number"
           onChange={(e) => setWeight(e.target.value)}
           value={weight}
@@ -144,6 +153,7 @@ const DonationForm = () => {
 
         <label>Quantity: </label>
         <input
+          required
           type="number"
           onChange={(e) => setQuantity(e.target.value)}
           value={quantity}
@@ -163,12 +173,31 @@ const DonationForm = () => {
             <label htmlFor={cat}>{cat}</label>
           </div>
         ))}
-        <button>Submit</button>
+        {articleName && expirationDate && weight && quantity && category && (
+          <span className="checkFood" onClick={checkEverything}>
+            Check food
+          </span>
+        )}
+
         {error && <div className="error">{error}</div>}
         {isGood && (
           <div>
             <p>All possible locations</p>
           </div>
+        )}
+        {isGood && (
+          <InstSelection
+            setSignal={setSignal}
+            setInstitution={setInstitution}
+            institution={institution}
+            user={user}
+            token={token}
+          />
+        )}
+        {isGood && signal ? (
+          <button>Donate</button>
+        ) : (
+          <button disabled></button>
         )}
       </form>
     </>

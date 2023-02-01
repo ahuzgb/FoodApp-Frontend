@@ -1,3 +1,9 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 /*  
 .container {
   display: flex;
@@ -93,3 +99,23 @@ main {
   padding-top: 50px;
 }
  */
+
+.checkFood {
+  border: 2px solid gray;
+  padding: 2px;
+}
+
+.checkFood:hover {
+  background-color: aqua;
+  cursor: pointer;
+}
+
+.locationPicker {
+  border: 2px solid black;
+  padding: 5px;
+}
+
+.singleLocation {
+  border: 1px solid black;
+  padding: 3px;
+}

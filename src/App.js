@@ -8,6 +8,7 @@ import LandingPage from "./components/LandingPage";
 import "./App.css";
 import DonationForm from "./components/DonationForm";
 import UserProfile from "./components/UserProfile";
+import { useJwt } from "react-jwt";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -17,6 +18,12 @@ function App() {
       setUser(JSON.parse(localStorage.getItem("user")));
     }
   }, [user]);
+
+  const token = user?.token;
+
+  const { decodedToken, isExpired } = useJwt(token);
+
+  console.log("UZZZERRR", decodedToken);
 
   return (
     <div className="App">
@@ -42,7 +49,13 @@ function App() {
         />
         <Route
           path="/donation-form"
-          element={user ? <DonationForm /> : <Navigate to="/" />}
+          element={
+            user ? (
+              <DonationForm user={decodedToken} token={token} />
+            ) : (
+              <Navigate to="/" />
+            )
+          }
         />
         <Route
           path="/userprofile"
