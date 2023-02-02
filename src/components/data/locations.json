@@ -2,91 +2,127 @@
   {
     "name": "Tafel Bad Cannstadt",
     "id": "63d291d8a0e806f7a75726a5",
-    "city": "Stuttgart"
+    "city": "Stuttgart",
+    "street": "Brückenstraße 1, ",
+    "zip": "70376"
   },
   {
     "name": "Tafel Baden-Württemberg e.V.",
     "id": "63d3dd170a6fff7320b63af7",
-    "city": "Stuttgart"
+    "city": "Stuttgart",
+    "street": "Heilbronner Str.180,",
+    "zip": "70191"
   },
   {
     "name": "Tafel Feuerbach",
     "id": "63d3dd2c0a6fff7320b63af9",
-    "city": "Stuttgart"
+    "city": "Stuttgart",
+    "street": "Hohnerstraße 21",
+    "zip": "70469"
   },
   {
     "name": "Tafel Stuttgart",
     "id": "63d3dd480a6fff7320b63afb",
-    "city": "Stuttgart"
+    "city": "Stuttgart",
+    "street": "Hauptstätterstr.75",
+    "zip": "70178"
   },
   {
     "name": "Gautinger Tafel e.V.",
     "id": "63d3dd5a0a6fff7320b63afd",
-    "city": "München"
+    "city": "München",
+    "street": "Am Würmufer 1",
+    "zip": "82131"
   },
   {
     "name": "Grünwalder Tafel",
     "id": "63d3de260a6fff7320b63b00",
-    "city": "München"
+    "city": "München",
+    "street": "Tobrukstr.2",
+    "zip": "82031"
   },
   {
     "name": "Münchner Tafel e.V.",
     "id": "63d3de5d0a6fff7320b63b02",
-    "city": "München"
+    "city": "München",
+    "street": "Thalkirchner Straße 81",
+    "zip": "81371"
   },
   {
     "name": "Frankfurter Tafel e.V.",
     "id": "63d3ded80a6fff7320b63b04",
-    "city": "Frankurt am Main"
+    "city": "Frankurt am Main",
+    "street": "Vilbeler Landstraße 15",
+    "zip": "60386"
   },
   {
     "name": "Tafel Bad Vilbel",
     "id": "63d3df130a6fff7320b63b06",
-    "city": "Frankurt am Main"
+    "city": "Frankurt am Main",
+    "street": "Ritterstraße 34",
+    "zip": "61118"
   },
   {
     "name": "Tafel Hochtaunus",
     "id": "63d3df450a6fff7320b63b08",
-    "city": "Frankurt am Main "
+    "city": "Frankurt am Main",
+    "street": "Heuchelheimer Str.20",
+    "zip": "61348"
   },
   {
     "name": "Tafel Maintal",
     "id": "63d3df7a0a6fff7320b63b0a",
-    "city": "Frankurt am Main "
+    "city": "Frankurt am Main",
+    "street": "Neckarstraße 13",
+    "zip": "63477"
   },
   {
     "name": "Tafel Offenbach e.V.",
     "id": "63d3dfac0a6fff7320b63b0c",
-    "city": "Frankurt am Main "
+    "city": "Frankurt am Main",
+    "street": "Konrad-Adenauer-Str.11",
+    "zip": "63073"
   },
   {
     "name": "Hürther Tafel e.V.",
     "id": "63d3dffd0a6fff7320b63b0e",
-    "city": "Köln"
+    "city": "Köln",
+    "street": "Kölnstr.14,",
+    "zip": "50354"
   },
   {
     "name": "Tafel Frechen",
     "id": "63d3e02d0a6fff7320b63b10",
-    "city": "Köln"
+    "city": "Köln",
+    "street": "Dr.-Gottfried-Cremer-Allee 29",
+    "zip": "50226"
   },
   {
     "name": "Tafel Brühl Rheinland e.V.",
     "id": "63d3e0690a6fff7320b63b12",
-    "city": "Köln"
+    "city": "Köln",
+    "street": "Bonnstr.21",
+    "zip": "50321"
   },
   {
     "name": "Tafel Erfstadtm",
     "id": "63d3e0950a6fff7320b63b14",
-    "city": "Köln"
+    "city": "Köln",
+    "street": "Von-Leibniz-Str.38",
+    "zip": "50374"
   },
   {
     "name": "Tafel Köln e.V.",
     "id": "63d3e0c70a6fff7320b63b16",
-    "city": "Köln"
+    "city": "Köln",
+    "street": "Kirschbaumweg 18 A",
+    "zip": "50996"
   },
   {
     "name": "Wesselinger Tafel e.V.",
     "id": "63d3e0f40a6fff7320b63b18",
-    "city": "Köln"
+    "city": "Köln",
+    "street": "Auf dem Mühlenberg 36",
+    "zip": "50389"
   }
 ]

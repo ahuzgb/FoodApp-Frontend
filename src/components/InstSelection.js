@@ -53,7 +53,9 @@ export default function InstSelection({
               required
             />
             <label htmlFor={location.name}>{location.name}</label>
-            <span>Street: some street name</span>
+            <span>{location.street}</span>
+            <span>{location.zip}</span>
+            <span>{location.city}</span>
           </div>
         ))}
       </div>
