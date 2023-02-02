@@ -24,6 +24,7 @@ function App() {
   const { decodedToken, isExpired } = useJwt(token);
 
   console.log("UZZZERRR", decodedToken);
+  console.log("EXPIRED ", isExpired);
 
   return (
     <div className="App">
@@ -33,12 +34,18 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route
           path="/home"
-          element={user ? <Home user={user} /> : <Navigate to="/" />}
+          element={
+            user && !isExpired ? <Home user={user} /> : <Navigate to="/" />
+          }
         />
         <Route
           path="/login"
           element={
-            !user ? <Login setUser={setUser} /> : <Navigate to="/home" />
+            !user || isExpired ? (
+              <Login setUser={setUser} />
+            ) : (
+              <Navigate to="/home" />
+            )
           }
         />
         <Route
@@ -50,7 +57,7 @@ function App() {
         <Route
           path="/donation-form"
           element={
-            user ? (
+            user && !isExpired ? (
               <DonationForm user={decodedToken} token={token} />
             ) : (
               <Navigate to="/" />
@@ -59,7 +66,7 @@ function App() {
         />
         <Route
           path="/userprofile"
-          element={user ? <UserProfile /> : <Navigate to="/" />}
+          element={user && !isExpired ? <UserProfile /> : <Navigate to="/" />}
         />
       </Routes>
     </div>

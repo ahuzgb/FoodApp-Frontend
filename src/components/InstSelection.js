@@ -35,7 +35,7 @@ export default function InstSelection({
   console.log("CURRENT USER FULL", currentUser);
 
   const locations = allLocations.filter(
-    (location) => location.city === currentUser.city
+    (location) => location.city === currentUser?.city
   );
 
   return (
