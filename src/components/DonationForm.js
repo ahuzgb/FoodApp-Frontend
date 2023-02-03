@@ -15,6 +15,8 @@ const DonationForm = ({ user, token }) => {
   const [signal, setSignal] = useState(false);
   const [institution, setInstitution] = useState("");
 
+  console.log("TOKEN", token);
+
   const categories = [
     "Bread",
     "Milk(haltbare)",
@@ -90,7 +92,10 @@ const DonationForm = ({ user, token }) => {
 
     const response = await fetch("http://localhost:8080/donations", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
       body: JSON.stringify({
         article_name: articleName,
         expiration_date: expirationDate,
@@ -99,6 +104,7 @@ const DonationForm = ({ user, token }) => {
         category,
         institution,
         user: user._id,
+        user_id: user._id,
       }),
     });
 
