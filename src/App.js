@@ -66,7 +66,13 @@ function App() {
         />
         <Route
           path="/userprofile"
-          element={user && !isExpired ? <UserProfile /> : <Navigate to="/" />}
+          element={
+            user && !isExpired ? (
+              <UserProfile user={user} token={token} />
+            ) : (
+              <Navigate to="/" />
+            )
+          }
         />
       </Routes>
     </div>
