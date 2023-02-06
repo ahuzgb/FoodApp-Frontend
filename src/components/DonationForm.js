@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import moment, { months } from "moment";
+import { useNavigate } from "react-router-dom";
 import InstSelection from "./InstSelection";
 
 const DonationForm = ({ user, token }) => {
   const [articleName, setArticleName] = useState("");
   const [expirationDate, setExpirationDate] = useState("");
-  const [weight, setWeight] = useState(0);
-  const [quantity, setQuantity] = useState(0);
+  const [weight, setWeight] = useState(null);
+  const [quantity, setQuantity] = useState(null);
   const [category, setCategory] = useState("");
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -16,6 +17,8 @@ const DonationForm = ({ user, token }) => {
   const [institution, setInstitution] = useState("");
 
   console.log("TOKEN", token);
+
+  const navigate = useNavigate();
 
   const categories = [
     "Bread",
@@ -117,8 +120,9 @@ const DonationForm = ({ user, token }) => {
 
     if (response.ok) {
       setIsLoading(false);
-      alert("Donation successfully added");
       resetForm();
+      alert("Donation successfully added");
+      navigate("../donation-form");
     }
   };
   const resetForm = () => {
@@ -127,6 +131,8 @@ const DonationForm = ({ user, token }) => {
     setWeight(0);
     setQuantity(0);
     setCategory("");
+    setInstitution("");
+    setIsGood(false);
   };
 
   return (
@@ -155,6 +161,7 @@ const DonationForm = ({ user, token }) => {
           type="number"
           onChange={(e) => setWeight(e.target.value)}
           value={weight}
+          placeholder="Insert weight"
         />
 
         <label>Quantity: </label>
@@ -162,7 +169,8 @@ const DonationForm = ({ user, token }) => {
           required
           type="number"
           onChange={(e) => setQuantity(e.target.value)}
-          value={quantity}
+          placeholder="Insert quantity"
+          value={quantity || null}
         />
 
         <label>Category: </label>
