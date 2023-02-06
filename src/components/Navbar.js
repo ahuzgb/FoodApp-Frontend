@@ -6,6 +6,7 @@ const Navbar = ({ user, setUser }) => {
     localStorage.removeItem("user");
     setUser(null);
   };
+  console.log("ussssssssser", user);
 
   return (
     <div className="container">
@@ -17,7 +18,7 @@ const Navbar = ({ user, setUser }) => {
       <nav>
         {user !== null && (
           <div>
-            <span>{user?.first + " "}</span>
+            <span>{user.email}</span>
             <button onClick={handleClick}>Log out</button>
             <Link to="userprofile">user profile</Link>
           </div>
