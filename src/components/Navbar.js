@@ -20,8 +20,12 @@ const Navbar = ({ user, setUser }) => {
       <nav>
         {user !== null && (
           <div className="navbar-right">
-            <span>{user?.first + " "}</span>
-            <button onClick={handleClick}>Log out</button>
+            <div className="navbar-username-container">
+              <span className="navbar-username">{user?.first + " "}</span>
+            </div>
+            <button onClick={handleClick} className="logout-button">
+              Log out
+            </button>
             <Link to="userprofile" className="navbar-button">
               user profile
             </Link>
