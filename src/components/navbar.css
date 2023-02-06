@@ -1,100 +1,57 @@
-/* .container {
+.navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  height: 60px;
-  background-color: #333;
+  padding: 25px;
+  background-color: #51a9a9;
   color: #fff;
 }
 
-.title {
-  font-size: 20px;
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
 }
 
-.home {
-  color: #fff;
-}
-
-nav {
+.navbar-right {
+  margin-left: auto;
   display: flex;
   align-items: center;
+  flex-direction: row;
 }
 
-nav span {
-  margin-right: 20px;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-right: 20px;
-}
-
-@media (max-width: 600px) {
-  .container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  nav a {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-}
- */
-
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  height: 60px;
-  background-color: #f2f2f2;
-  color: #333;
-  font-size: 18px;
+.navbar-button {
+  margin-left: 10px;
+  color: #fdf8f2;
+  border: none;
+  padding: 10px 20px;
+  font-size: 22px;
   font-family: "Open Sans", sans-serif;
-}
-
-.title {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.home {
-  color: #333;
   text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: uppercase;
 }
 
-nav {
-  display: flex;
-  align-items: center;
-}
-
-nav span {
-  margin-right: 20px;
-}
-
-nav a {
+.navbar-button:hover {
+  background-color: #d46e6e;
   color: #333;
-  text-decoration: none;
-  margin-right: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
-@media (max-width: 600px) {
-  .container {
+@media (max-width: 767px) {
+  .navbar-container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
-  nav {
+  .navbar-nav {
+    width: 100%;
+    margin-bottom: 20px;
     flex-direction: column;
-    align-items: flex-start;
   }
-  nav a {
-    margin-right: 0;
-    margin-bottom: 10px;
+  .navbar-right {
+    margin-left: 0;
+    margin-bottom: 20px;
+    flex-direction: column;
   }
 }

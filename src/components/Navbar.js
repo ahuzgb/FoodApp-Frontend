@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../components/navbar.css";
+import Logo from "./images/beanie-logo.png";
 
 const Navbar = ({ user, setUser }) => {
   const handleClick = () => {
@@ -9,26 +10,29 @@ const Navbar = ({ user, setUser }) => {
   console.log("ussssssssser", user);
 
   return (
-    <div className="container">
-      <div className="title">
-        <Link to="/home" className="home">
+    <div className="navbar-container">
+      <img src={Logo} alt="logo" style={{ width: "200px" }} />
+      <div className="navbar-right">
+        <Link to="/home" className="navbar-button">
           Home
         </Link>
       </div>
       <nav>
         {user !== null && (
-          <div>
+          <div className="navbar-right">
             <span>{user?.first + " "}</span>
             <button onClick={handleClick}>Log out</button>
-            <Link to="userprofile">user profile</Link>
+            <Link to="userprofile" className="navbar-button">
+              user profile
+            </Link>
           </div>
         )}
         {user === null && (
-          <div className="butons">
-            <Link to="login" className="login">
+          <div className="navbar-right">
+            <Link to="login" className="navbar-button">
               Login
             </Link>
-            <Link to="signup" className="signup">
+            <Link to="signup" className="navbar-button">
               Signup
             </Link>
           </div>
