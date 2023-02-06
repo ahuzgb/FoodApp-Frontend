@@ -18,7 +18,7 @@ const Navbar = ({ user, setUser }) => {
       <nav>
         {user !== null && (
           <div>
-            <span>{user.email}</span>
+            <span>{user?.first + " "}</span>
             <button onClick={handleClick}>Log out</button>
             <Link to="userprofile">user profile</Link>
           </div>
