@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "../components/navbar.css";
 
 const Navbar = ({ user, setUser }) => {
   const handleClick = () => {
@@ -16,7 +17,7 @@ const Navbar = ({ user, setUser }) => {
       <nav>
         {user !== null && (
           <div>
-            <span>{user.email}</span>
+            <span>{user?.first + " "}</span>
             <button onClick={handleClick}>Log out</button>
             <Link to="userprofile">user profile</Link>
           </div>
