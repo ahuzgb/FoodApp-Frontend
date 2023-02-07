@@ -12,6 +12,12 @@ const Navbar = ({ user, setUser }) => {
   return (
     <div className="navbar-container">
       <img src={Logo} alt="logo" style={{ width: "200px" }} />
+
+      {user !== null && (
+        <div className="navbar-username-container">
+          {"Hello, " + user?.first + " "}
+        </div>
+      )}
       <div className="navbar-right">
         <Link to="/home" className="navbar-button">
           Home
@@ -20,9 +26,6 @@ const Navbar = ({ user, setUser }) => {
       <nav>
         {user !== null && (
           <div className="navbar-right">
-            <div className="navbar-username-container">
-              <span className="navbar-username">{user?.first + " "}</span>
-            </div>
             <button onClick={handleClick} className="logout-button">
               Log out
             </button>

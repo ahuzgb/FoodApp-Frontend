@@ -1,0 +1,19 @@
+.footer-container {
+  position: static;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #51a9a9;
+  color: white;
+  text-align: center;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .footer-container {
+    height: 50px;
+  }
+}
