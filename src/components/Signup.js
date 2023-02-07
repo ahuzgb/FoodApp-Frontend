@@ -42,7 +42,7 @@ const Signup = ({ setUser }) => {
   };
 
   return (
-    <div className="container">
+    <div className="container-signup">
     <form className="signup" onSubmit={handleSubmit}>
       <label>First name </label>
       <input

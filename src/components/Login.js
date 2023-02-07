@@ -34,7 +34,7 @@ const Login = ({ setUser }) => {
   };
 
   return (
-    <div className="container">
+    <div className="container-login">
       <form className="login" onSubmit={handleSubmit}>
         <label>Email </label>
         <input

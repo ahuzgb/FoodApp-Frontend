@@ -12,7 +12,9 @@ import UserProfile from "./components/UserProfile";
 import { useJwt } from "react-jwt";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem("user")) || null
+  );
 
   useEffect(() => {
     if (!user) {

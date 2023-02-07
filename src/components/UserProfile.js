@@ -44,14 +44,6 @@ const UserProfile = ({ user }) => {
           <h1 style={{ color: "red" }}>No donations found</h1>
         )}
       </div>
-
-      <div>
-        <div>
-          <p>Some text about donations and stuff</p>
-        </div>
-
-        <Link to="/donation-form">donation-form</Link>
-      </div>
     </>
   );
 };
