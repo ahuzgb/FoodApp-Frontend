@@ -34,10 +34,10 @@ const UserProfile = ({ user }) => {
             <div key={donation._id}>
               <h2>{donation.article_name}</h2>
               <h3>{donation.category}</h3>
-              <h3>{donation.createdAt}</h3>
+              <h3>{new Date(donation.createdAt).toLocaleDateString()}</h3>
 
               <h3>{donation.quantity}</h3>
-              <h3>{donation.weight}</h3>
+              <h3>{donation.weight + " kg"}</h3>
             </div>
           ))
         ) : (
