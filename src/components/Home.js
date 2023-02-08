@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "../components/home.css";
+import Icon1 from "./images/garbage.png";
+import Icon2 from "./images/home.png";
+import Icon3 from "./images/people.png";
+import Icon4 from "./images/logo-donation.png";
 
 const Home = ({ user }) => {
   const [donations, setDonations] = useState([]);
@@ -27,31 +32,68 @@ const Home = ({ user }) => {
   console.log("HERE", donations);
 
   return (
-    /*     <div className="donations">
-      {donations.length ? (
-        donations.map((donation) => (
-          <div key={donation._id}>
-            <h2>{donation.title}</h2>
-            <p>
-              <strong>title: </strong>
-              {donation.title}
-            </p>
-            <p>
-              <strong>text: </strong>
-              {donation.body}
-            </p>
-          </div>
-        ))
-      ) : (
-        <h1 style={{ color: "red" }}>No donations found</h1>
-      )}
-    </div> */
-    <div>
-      <div>
-        <p>Some text about donations and stuff</p>
+    <div className="container-home">
+      <h1 className="header-home">Facts about food waste</h1>
+      <div className="container-info">
+        <div className="info-box1">
+          <span>
+            around 1.3 billion tons of food ends up in trash every year
+            worldwide
+          </span>
+          <br />
+          <br />
+          <span>
+            <img src={Icon1} alt="Icon1" style={{ width: "70px" }} />
+          </span>
+        </div>
+        <div className="info-box2">
+          <span>
+            around 75 kg of food one person in Germany throws away per year
+          </span>
+          <br />
+          <br />
+          <span>
+            <img src={Icon3} alt="Icon3" style={{ width: "70px" }} />
+          </span>
+        </div>
+        <div className="info-box3">
+          <span>
+            in German households, around one in eight items of food is thrown
+            away
+          </span>
+          <br />
+          <br />
+          <span>
+            <img src={Icon2} alt="Icon2" style={{ width: "70px" }} />
+          </span>
+        </div>
+        <div className="info-box4">
+          <span>
+            around 6.7 million tons of still edible food are thrown away in
+            German households
+          </span>
+          <br />
+          <span></span>
+        </div>
+        <div className="info-box5">
+          <span>
+            about 52 percent of all food waste is generated in private
+            households
+          </span>
+          <br />
+          <span></span>
+        </div>
+        <div className="info-box6">
+          <span>
+            contribute inside the foodbär community and prevent food waste now
+          </span>
+          <br />
+          <span>
+            <Link to="/donation-form">donation-form</Link>
+          </span>
+        </div>
       </div>
-
-      <Link to="/donation-form">donation-form</Link>
+      {/* <Link to="/donation-form">donation-form</Link> */}
     </div>
   );
 };

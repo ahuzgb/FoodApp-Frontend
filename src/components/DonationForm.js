@@ -2,6 +2,15 @@ import React, { useState } from "react";
 import moment, { months } from "moment";
 import { useNavigate } from "react-router-dom";
 import InstSelection from "./InstSelection";
+import "../components/donationForm.css";
+import svg1 from "./images/bread.svg";
+import svg2 from "./images/milk.svg";
+import svg3 from "./images/coffee.svg";
+import svg4 from "./images/pasta.svg";
+import svg5 from "./images/noodles.svg";
+import svg6 from "./images/rice.svg";
+import svg7 from "./images/canned.svg";
+import svg8 from "./images/chocolate.svg";
 
 const DonationForm = ({ user, token }) => {
   const [articleName, setArticleName] = useState("");
@@ -21,14 +30,45 @@ const DonationForm = ({ user, token }) => {
   const navigate = useNavigate();
 
   const categories = [
-    "Bread",
-    "Milk(haltbare)",
-    "Coffee",
-    "Pasta",
-    "Cup Noodles/Cup Soup",
-    "Rice",
-    "Canned goods",
-    "Chocolate",
+    {
+      name: "Bread",
+      pic: svg1,
+    },
+
+    {
+      name: "Milk(haltbare)",
+      pic: svg2,
+    },
+
+    {
+      name: "Coffee",
+      pic: svg3,
+    },
+
+    {
+      name: "Pasta",
+      pic: svg4,
+    },
+
+    {
+      name: "Cup Noodles/Cup Soup",
+      pic: svg5,
+    },
+
+    {
+      name: "Rice",
+      pic: svg6,
+    },
+
+    {
+      name: "Canned goods",
+      pic: svg7,
+    },
+
+    {
+      name: "Chocolate",
+      pic: svg8,
+    },
   ];
 
   const checkExpiration = (currentDate, articleDate) => {
@@ -138,55 +178,92 @@ const DonationForm = ({ user, token }) => {
   return (
     <>
       <form className="donation-form" onSubmit={handleSubmit}>
-        <h3>Donation Form</h3>
-        <label>Article name: </label>
-        <input
-          required
-          type="text"
-          onChange={(e) => setArticleName(e.target.value)}
-          value={articleName}
-        />
-
-        <label>Expiration date: </label>
-        <input
-          required
-          type="date"
-          onChange={(e) => setExpirationDate(e.target.value)}
-          value={expirationDate}
-        />
-
-        <label>Weight: </label>
-        <input
-          required
-          type="number"
-          onChange={(e) => setWeight(e.target.value)}
-          value={weight}
-          placeholder="Insert weight"
-        />
-
-        <label>Quantity: </label>
-        <input
-          required
-          type="number"
-          onChange={(e) => setQuantity(e.target.value)}
-          placeholder="Insert quantity"
-          value={quantity || null}
-        />
-
-        <label>Category: </label>
-        {categories.map((cat) => (
-          <div key={cat}>
-            <input
-              type="radio"
-              name="category"
-              id={cat}
-              value={cat}
-              checked={category === cat}
-              onChange={(e) => setCategory(e.target.value)}
-            />
-            <label htmlFor={cat}>{cat}</label>
+        <div className="daddy-container">
+          <div className="donation-fields">
+            <span className="inputField_label"></span>
+            <div className="donation_fields_child">
+              {/* MAKE A DIV FOR EACH INPUT AND LABEL */}
+              <fieldset id="fieldset">
+                <legend id="legend">THE foodbär TOOL</legend>
+                <div className="single_inp">
+                  <div>
+                    <label>Article name: </label>
+                  </div>
+                  <input
+                    required
+                    type="text"
+                    onChange={(e) => setArticleName(e.target.value)}
+                    value={articleName}
+                  />
+                </div>
+                <div className="single_inp">
+                  <div>
+                    <label>Expiration date: </label>
+                  </div>
+                  <input
+                    required
+                    type="date"
+                    onChange={(e) => setExpirationDate(e.target.value)}
+                    value={expirationDate}
+                  />
+                </div>
+                <div className="single_inp">
+                  <div>
+                    <label>Weight: </label>
+                  </div>
+                  <input
+                    required
+                    type="number"
+                    onChange={(e) => setWeight(e.target.value)}
+                    value={weight}
+                    placeholder="Insert weight"
+                  />
+                </div>
+                <div className="single_inp">
+                  <div>
+                    <label>Quantity: </label>
+                  </div>
+                  <input
+                    required
+                    type="number"
+                    onChange={(e) => setQuantity(e.target.value)}
+                    placeholder="Insert quantity"
+                    value={quantity || null}
+                  />
+                </div>
+              </fieldset>
+            </div>
           </div>
-        ))}
+
+          <div className="donation-categories">
+            <span className="categeory_label"></span>
+            {categories.map((cat) => (
+              <label htmlFor={cat.name}>
+                <div className="single_category" key={cat.name}>
+                  <input
+                    className="hello"
+                    type="radio"
+                    name="category"
+                    id={cat.name}
+                    value={cat.name}
+                    checked={category === cat.name}
+                    onChange={(e) => setCategory(e.target.value)}
+                  />
+                  <span className="label_cat">{cat.name}</span>
+                  <span className="logo_cat">
+                    <img
+                      src={cat.pic}
+                      alt={cat.name}
+                      style={{ width: "70px" }}
+                    />
+                  </span>
+                </div>
+              </label>
+              // HERE
+            ))}
+          </div>
+        </div>
+
         {articleName && expirationDate && weight && quantity && category && (
           <span className="checkFood" onClick={checkEverything}>
             Check food

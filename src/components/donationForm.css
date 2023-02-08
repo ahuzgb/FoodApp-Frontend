@@ -1,0 +1,115 @@
+.donation-form {
+  background-color: #f4ece3;
+}
+
+.daddy-container {
+  /*  border: 2px solid black; */
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  height: inherit;
+}
+
+.donation-categories {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  margin-top: 6.6em;
+  margin-left: 250px;
+}
+
+.single_category {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 15px;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: "Open Sans", sans-serif;
+  background: #d46e6e;
+  color: #fdf8f2;
+  border-radius: 7px;
+  margin: 4px;
+  transition: transform 0.2s;
+}
+
+.single_category:hover {
+  transform: scale(
+    1.03
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.label_cat {
+  margin-top: 5%;
+}
+
+.categeory_label {
+  color: red;
+  font-size: 40px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+
+.donation-fields {
+  /* border: 2px solid yellowgreen; */
+  display: flex;
+  flex-direction: column;
+  width: 67%;
+  margin-top: 50px;
+  margin-left: 100px;
+}
+
+.donation_fields_child {
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  height: 600px;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: "Open Sans", sans-serif;
+
+  color: #fdf8f2;
+}
+
+.donation_fields_child input {
+  margin: 30px;
+}
+
+.single_inp {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+
+.single_inp label {
+  color: red;
+}
+
+#fieldset {
+  margin-top: 1.7em;
+  border-radius: 10px;
+}
+
+#legend {
+  color: #d46e6e;
+  margin-left: 5.2em;
+}
+
+.inputField_label {
+  color: red;
+  font-size: 40px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+
+.hello {
+  width: 20px;
+}
+
+.hello:checked {
+  background-color: #ddd;
+}
