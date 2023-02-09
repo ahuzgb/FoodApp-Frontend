@@ -25,7 +25,7 @@ const DonationForm = ({ user, token }) => {
   const [signal, setSignal] = useState(false);
   const [institution, setInstitution] = useState("");
 
-  console.log("TOKEN", token);
+  const liveUrl = "https://foodbar-eux4.onrender.com";
 
   const navigate = useNavigate();
 
@@ -133,7 +133,7 @@ const DonationForm = ({ user, token }) => {
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch("http://localhost:8080/donations", {
+    const response = await fetch(liveUrl + "/donations", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

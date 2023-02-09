@@ -26,9 +26,6 @@ function App() {
 
   const { decodedToken, isExpired } = useJwt(token);
 
-  console.log("UZZZERRR", decodedToken);
-  console.log("EXPIRED ", isExpired);
-
   return (
     <div className="App">
       <Navbar user={user} setUser={setUser} />

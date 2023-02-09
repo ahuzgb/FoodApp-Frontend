@@ -9,10 +9,12 @@ import Icon4 from "./images/logo-donation.png";
 const Home = ({ user }) => {
   const [donations, setDonations] = useState([]);
 
+  const liveUrl = "https://foodbar-eux4.onrender.com";
+
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await fetch("http://localhost:8080/donations", {
+        const res = await fetch(liveUrl + "/donations", {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },

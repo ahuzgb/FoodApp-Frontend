@@ -9,13 +9,15 @@ const Signup = ({ setUser }) => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  const liveUrl = "https://foodbar-eux4.onrender.com";
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch("http://localhost:8080/users/signup", {
+    const response = await fetch(liveUrl + "/users/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -43,43 +45,43 @@ const Signup = ({ setUser }) => {
 
   return (
     <div className="container-signup">
-    <form className="signup" onSubmit={handleSubmit}>
-      <label>First name </label>
-      <input
-        type="text"
-        onChange={(e) => setName(e.target.value)}
-        value={name}
-      />
-      <label>Last name </label>
-      <input
-        type="text"
-        onChange={(e) => setSurname(e.target.value)}
-        value={surname}
-      />
-      <label>City</label>
-      <input
-        type="text"
-        onChange={(e) => setCity(e.target.value)}
-        value={city}
-      />
-      <label>Email </label>
-      <input
-        type="email"
-        onChange={(e) => setEmail(e.target.value)}
-        value={email}
-      />
+      <form className="signup" onSubmit={handleSubmit}>
+        <label>First name </label>
+        <input
+          type="text"
+          onChange={(e) => setName(e.target.value)}
+          value={name}
+        />
+        <label>Last name </label>
+        <input
+          type="text"
+          onChange={(e) => setSurname(e.target.value)}
+          value={surname}
+        />
+        <label>City</label>
+        <input
+          type="text"
+          onChange={(e) => setCity(e.target.value)}
+          value={city}
+        />
+        <label>Email </label>
+        <input
+          type="email"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+        />
 
-      <label>Password </label>
-      <input
-        type="password"
-        onChange={(e) => setPassword(e.target.value)}
-        value={password}
-      />
+        <label>Password </label>
+        <input
+          type="password"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+        />
 
-      <button>Sign up</button>
-      {error && <div className="error">{error}</div>}
-    </form>
-  </div>
+        <button>Sign up</button>
+        {error && <div className="error">{error}</div>}
+      </form>
+    </div>
   );
 };
 

@@ -14,10 +14,12 @@ const UserProfile = ({ user }) => {
   const [donations, setDonations] = useState([]);
   const [totalWeight, setTotalWeight] = useState(0);
 
+  const liveUrl = "https://foodbar-eux4.onrender.com";
+
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await fetch("http://localhost:8080/donations", {
+        const res = await fetch(liveUrl + "/donations", {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },

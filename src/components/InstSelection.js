@@ -10,7 +10,7 @@ export default function InstSelection({
 }) {
   const [currentUser, setCurrentUser] = useState(null);
 
-  const url = `http://localhost:8080/users/${user._id}`;
+  const liveUrl = `https://foodbar-eux4.onrender.com/users/${user._id};`;
 
   function onChangeValue(event) {
     setInstitution(event.target.value);
@@ -20,7 +20,7 @@ export default function InstSelection({
 
   useEffect(() => {
     const getCurrentUser = async () => {
-      const response = await fetch(url, {
+      const response = await fetch(liveUrl, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -7,13 +7,15 @@ const Login = ({ setUser }) => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  const liveUrl = "https://foodbar-eux4.onrender.com";
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch("http://localhost:8080/users/login", {
+    const response = await fetch(liveUrl + "/users/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
