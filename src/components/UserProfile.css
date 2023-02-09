@@ -1,0 +1,77 @@
+.donations {
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4ece3;
+}
+
+.donations > div {
+  width: 500px;
+  text-align: center;
+  margin: 20px;
+  border: 1px solid black;
+  padding: 20px;
+  color: #f4ece3;
+  border-radius: 10px;
+  background-color: #d46e6e;
+}
+.centerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4ece3;
+  min-height: 80vh;
+}
+
+.bottom-link > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.centerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-link > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.centerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-link {
+  color: #f4ece3;
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+  background-color: #51a9a9;
+  color: #f4ece3;
+  padding: 16px 32px;
+  text-decoration: none;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.bottom-link > div {
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
