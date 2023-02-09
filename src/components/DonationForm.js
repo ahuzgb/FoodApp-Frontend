@@ -231,8 +231,31 @@ const DonationForm = ({ user, token }) => {
                     value={quantity || null}
                   />
                 </div>
+                {articleName &&
+                  expirationDate &&
+                  weight &&
+                  quantity &&
+                  category && (
+                    <span className="checkFood" onClick={checkEverything}>
+                      Check food
+                    </span>
+                  )}
               </fieldset>
             </div>
+            {isGood && (
+              <InstSelection
+                setSignal={setSignal}
+                setInstitution={setInstitution}
+                institution={institution}
+                user={user}
+                token={token}
+              />
+            )}
+            {isGood && signal ? (
+              <button>Donate</button>
+            ) : (
+              <button disabled></button>
+            )}
           </div>
 
           <div className="donation-categories">
@@ -241,7 +264,7 @@ const DonationForm = ({ user, token }) => {
               <label htmlFor={cat.name}>
                 <div className="single_category" key={cat.name}>
                   <input
-                    className="hello"
+                    className="checkfield"
                     type="radio"
                     name="category"
                     id={cat.name}
@@ -262,34 +285,8 @@ const DonationForm = ({ user, token }) => {
               // HERE
             ))}
           </div>
+          {error && <div className="error">{error}</div>}
         </div>
-
-        {articleName && expirationDate && weight && quantity && category && (
-          <span className="checkFood" onClick={checkEverything}>
-            Check food
-          </span>
-        )}
-
-        {error && <div className="error">{error}</div>}
-        {isGood && (
-          <div>
-            <p>All possible locations</p>
-          </div>
-        )}
-        {isGood && (
-          <InstSelection
-            setSignal={setSignal}
-            setInstitution={setInstitution}
-            institution={institution}
-            user={user}
-            token={token}
-          />
-        )}
-        {isGood && signal ? (
-          <button>Donate</button>
-        ) : (
-          <button disabled></button>
-        )}
       </form>
     </>
   );

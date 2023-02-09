@@ -34,9 +34,7 @@
 }
 
 .single_category:hover {
-  transform: scale(
-    1.03
-  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transform: scale(1.03);
 }
 
 .label_cat {
@@ -70,7 +68,6 @@
   font-weight: bold;
   font-size: 25px;
   font-family: "Open Sans", sans-serif;
-
   color: #fdf8f2;
 }
 
@@ -85,31 +82,39 @@
 }
 
 .single_inp label {
-  color: red;
+  color: #d46e6e;
 }
 
 #fieldset {
   margin-top: 1.7em;
+  display: flex;
   border-radius: 10px;
+  flex-direction: column;
+  padding: 30px;
+  align-items: baseline;
+}
+
+#fieldset input {
+  padding: 5px;
 }
 
 #legend {
-  color: #d46e6e;
-  margin-left: 5.2em;
+  color: #c32121;
+  margin-left: 5em;
 }
 
-.inputField_label {
-  color: red;
-  font-size: 40px;
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
-  font-weight: bold;
-}
-
-.hello {
+.checkfield {
   width: 20px;
 }
 
-.hello:checked {
-  background-color: #ddd;
+.checkFood {
+  border: 2px solid rgba(0, 0, 0, 0.567);
+  color: #d46e6e;
+  padding: 4px;
+}
+
+.checkFood:hover {
+  color: #fdf8f2;
+  background-color: #d46e6e;
+  cursor: pointer;
 }

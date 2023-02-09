@@ -99,16 +99,6 @@ main {
   padding-top: 50px;
 }
 
-.checkFood {
-  border: 2px solid gray;
-  padding: 2px;
-}
-
-.checkFood:hover {
-  background-color: aqua;
-  cursor: pointer;
-}
-
 .locationPicker {
   border: 2px solid black;
   padding: 5px;

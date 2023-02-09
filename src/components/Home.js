@@ -41,7 +41,7 @@ const Home = ({ user }) => {
             worldwide
           </span>
           <br />
-          <br />
+
           <span>
             <img src={Icon1} alt="Icon1" style={{ width: "70px" }} />
           </span>
@@ -50,7 +50,7 @@ const Home = ({ user }) => {
           <span>
             around 75 kg of food one person in Germany throws away per year
           </span>
-          <br />
+
           <br />
           <span>
             <img src={Icon3} alt="Icon3" style={{ width: "70px" }} />
@@ -58,10 +58,8 @@ const Home = ({ user }) => {
         </div>
         <div className="info-box3">
           <span>
-            in German households, around one in eight items of food is thrown
-            away
+            in German households one in eight items of food is thrown away
           </span>
-          <br />
           <br />
           <span>
             <img src={Icon2} alt="Icon2" style={{ width: "70px" }} />
@@ -85,11 +83,15 @@ const Home = ({ user }) => {
         </div>
         <div className="info-box6">
           <span>
-            contribute inside the foodbär community and prevent food waste now
+            contribute inside the foodbär community and prevent food waste
           </span>
           <br />
-          <span>
-            <Link to="/donation-form">donation-form</Link>
+          <span className="actionSpan">
+            <Link to="/donation-form" id="takeAction">
+              <span>&#8594;</span>
+              Take action now
+              <span>&#8592;</span>
+            </Link>
           </span>
         </div>
       </div>

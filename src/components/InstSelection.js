@@ -40,7 +40,7 @@ export default function InstSelection({
 
   return (
     <>
-      <h2>institutions</h2>
+      <h2>foodbär spots</h2>
       <div className="locationPicker" onChange={onChangeValue}>
         {locations?.map((location) => (
           <div className="singleLocation">
