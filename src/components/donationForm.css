@@ -1,9 +1,9 @@
 .donation-form {
   background-color: #f4ece3;
+  height: 1300px;
 }
 
 .daddy-container {
-  /*  border: 2px solid black; */
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
@@ -50,7 +50,6 @@
 }
 
 .donation-fields {
-  /* border: 2px solid yellowgreen; */
   display: flex;
   flex-direction: column;
   width: 67%;
@@ -72,7 +71,7 @@
 }
 
 .donation_fields_child input {
-  margin: 30px;
+  margin: 20px;
 }
 
 .single_inp {
@@ -92,6 +91,7 @@
   flex-direction: column;
   padding: 30px;
   align-items: baseline;
+  border: 3px solid gray;
 }
 
 #fieldset input {
@@ -100,7 +100,7 @@
 
 #legend {
   color: #c32121;
-  margin-left: 5em;
+  margin-left: 4.6em;
 }
 
 .checkfield {
@@ -111,9 +111,31 @@
   border: 2px solid rgba(0, 0, 0, 0.567);
   color: #d46e6e;
   padding: 4px;
+  border-radius: 5px;
 }
 
 .checkFood:hover {
+  color: #fdf8f2;
+  background-color: #d46e6e;
+  cursor: pointer;
+}
+
+#kg {
+  color: #d46e6e;
+  font-size: 15px;
+}
+
+#donate {
+  border: 2px solid rgba(0, 0, 0, 0.567);
+  color: #d46e6e;
+  padding: 16px;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: #fdf8f2;
+  margin-top: 10px;
+}
+
+#donate:hover {
   color: #fdf8f2;
   background-color: #d46e6e;
   cursor: pointer;

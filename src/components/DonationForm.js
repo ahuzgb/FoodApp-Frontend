@@ -218,6 +218,7 @@ const DonationForm = ({ user, token }) => {
                     value={weight}
                     placeholder="Insert weight"
                   />
+                  <span id="kg">Kg</span>
                 </div>
                 <div className="single_inp">
                   <div>
@@ -229,7 +230,7 @@ const DonationForm = ({ user, token }) => {
                     onChange={(e) => setQuantity(e.target.value)}
                     placeholder="Insert quantity"
                     value={quantity || null}
-                  />
+                  />{" "}
                 </div>
                 {articleName &&
                   expirationDate &&
@@ -240,22 +241,18 @@ const DonationForm = ({ user, token }) => {
                       Check food
                     </span>
                   )}
+                {isGood && (
+                  <InstSelection
+                    setSignal={setSignal}
+                    setInstitution={setInstitution}
+                    institution={institution}
+                    user={user}
+                    token={token}
+                  />
+                )}
+                {isGood && signal ? <button id="donate">Donate</button> : null}
               </fieldset>
             </div>
-            {isGood && (
-              <InstSelection
-                setSignal={setSignal}
-                setInstitution={setInstitution}
-                institution={institution}
-                user={user}
-                token={token}
-              />
-            )}
-            {isGood && signal ? (
-              <button>Donate</button>
-            ) : (
-              <button disabled></button>
-            )}
           </div>
 
           <div className="donation-categories">

@@ -4,107 +4,57 @@
   box-sizing: border-box;
 }
 
-/*  
-.container {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 10px;
-  background-color: #333;
-  color: #fff;
-  width: 100vw;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.title {
-  font-size: 22px;
-  display: flex;
-}
-
-.home {
-  color: #fff;
-  text-decoration: none;
-  margin-right: 10px;
-}
-
-.butons {
-  display: flex;
-  font-size: 22px;
-}
-
-.butons a {
-  margin-right: 10px;
-  color: #fff;
-  text-decoration: none;
-}
-
-.butons button {
-  background-color: #fff;
-  color: #333;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
- */
-
-/* .container {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 10px;
-  background-color: #333;
-  color: #fff;
-  width: 100vw;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 1;
-}
-
-.title {
-  font-size: 22px;
-  display: flex;
-}
-
-.home {
-  color: #fff;
-  text-decoration: none;
-  margin-right: 10px;
-}
-
-.butons {
-  display: flex;
-  font-size: 22px;
-}
-
-.butons a {
-  margin-right: 10px;
-  color: #fff;
-  text-decoration: none;
-}
-
-.butons button {
-  background-color: #fff;
-  color: #333;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-} */
-
 main {
   padding-top: 50px;
 }
 
 .locationPicker {
-  border: 2px solid black;
+  /* border: 2px solid black; */
   padding: 5px;
 }
 
 .singleLocation {
   border: 1px solid black;
-  padding: 3px;
+  padding: 5px;
+  background-color: #d46e6e;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.spots {
+  margin-top: 20px;
+  height: 400px;
+  overflow-y: scroll;
+  border-radius: 10px;
+}
+
+.singleLocation:hover {
+  cursor: pointer;
+}
+
+.location_address {
+  padding: 10px;
+  border-top: 2px solid #fdf8f2;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d46e6e #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 13px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #d46e6e;
+  border-radius: 10px;
+  border: 3px double #ffffff;
 }

@@ -40,24 +40,30 @@ export default function InstSelection({
 
   return (
     <>
-      <h2>foodbär spots</h2>
-      <div className="locationPicker" onChange={onChangeValue}>
-        {locations?.map((location) => (
-          <div className="singleLocation">
-            <input
-              id={location.name}
-              type="radio"
-              checked={institution == location.id}
-              name="inst"
-              value={location.id}
-              required
-            />
-            <label htmlFor={location.name}>{location.name}</label>
-            <span>{location.street}</span>
-            <span>{location.zip}</span>
-            <span>{location.city}</span>
-          </div>
-        ))}
+      <h2 style={{ color: "#c32121", marginTop: "10px" }}>foodbär spots</h2>
+      <div className="spots">
+        <div className="locationPicker" onChange={onChangeValue}>
+          {locations?.map((location) => (
+            <label htmlFor={location.name}>
+              <div className="singleLocation">
+                <input
+                  id={location.name}
+                  type="radio"
+                  checked={institution == location.id}
+                  name="inst"
+                  value={location.id}
+                  required
+                />
+                {location.name}
+                <div className="location_address">
+                  <p>{location.street}</p>
+                  <p>{location.zip}</p>
+                  <p>{location.city}</p>
+                </div>
+              </div>
+            </label>
+          ))}
+        </div>
       </div>
     </>
   );
