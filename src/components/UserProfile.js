@@ -38,7 +38,7 @@ const UserProfile = ({ user }) => {
 
   useEffect(() => {
     setTotalWeight(
-      donations.reduce((acc, donation) => acc + donation.weight, 0)
+      donations.reduce((acc, donation) => acc + donation.weight, 0).toFixed(2)
     );
   }, [donations]);
   const totalDonations = donations.length;
